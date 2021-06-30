@@ -1,0 +1,53 @@
+<!--pages/order/order.wxml-->
+<view style="background-color:#E8E7E9">
+  <image class="backgroud_image" src="../../icon/Screenshot.png" style='width: 100%; height: 6vw; border-radius: 10rpx;'></image>
+  <view style="text-align: center">
+  3号厅银幕
+  </view>
+  <view style="display:flex">
+    <image src="../../icon/seat.png" style='padding-left:180rpx;width: 8vw; height: 8vw; border-radius: 10rpx;'></image>
+    <text>可选</text>
+    <image src="../../icon/seating.png" style='width: 8vw; height: 8vw; border-radius: 10rpx;'></image>
+    <text>已选</text>
+    <image src="../../icon/seated.png" style='width: 8vw; height: 8vw; border-radius: 10rpx;'></image>
+    <text>已售</text>
+
+  </view>
+</view>
+
+<block  wx:for='{{mylistx}}' wx:for-item="i" >
+    <view style="display:flex">
+      <block  wx:for='{{mylisty}}' wx:for-item="j">
+        <view wx:if="{{j.x==i.x&&j.y==1}}">{{j.x}}</view>
+          <image wx:if="{{j.x==i.x&&j.state==0}}" bindtap="bindOrdertap" src="../../icon/seat.png" style='width: 10vw; height: 10vw; border-radius: 10rpx;' data-valuex="{{j.x}}" data-valuey="{{j.y}}" ></image>
+          <image wx:if="{{j.x==i.x&&j.state==1}}" bindtap="bindOrdertap" src="../../icon/seating.png" style='width: 10vw; height: 10vw; border-radius: 10rpx;' data-valuex="{{j.x}}" data-valuey="{{j.y}}" ></image>
+          
+      </block>
+    </view>
+</block>
+
+<view class="container">
+  <image class="image1" src='../../icon/background_view.png'></image>
+  <view class='up'style='position: fixed;bottom:300rpx'>
+    齐天大圣
+  </view>
+  <view class='up' style='position: fixed;bottom:250rpx'>
+    6月29日 20:30-23:12
+  </view>
+  <view class='up'></view>
+  <view style="display:flex;position: fixed;bottom:-150rpx">
+    <block  wx:for='{{mylisty}}'>
+      <view wx:if="{{item.state==1}}" class="container">
+        <image class="image2" src='../../icon/background_view2.png'></image>
+        <view class='up'>
+        {{item.x}}排{{item.y}}座
+        </view>
+        <view class='up' style="position: fixed;top:980rpx">
+          {{item.price}}元
+        </view>
+      </view>
+    </block>
+  </view>
+  <button style="background-color:#1296DB;border-radius: 50px;position: fixed;bottom:10rpx">确认选座</button>
+  
+</view>

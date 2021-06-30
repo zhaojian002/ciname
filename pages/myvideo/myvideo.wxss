@@ -1,0 +1,5 @@
+/* pages/myvideo/myvideo.wxss */
+.line {
+  border: 1px solid #ccc;
+  opacity: 0.2;
+}

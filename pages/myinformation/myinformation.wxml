@@ -1,0 +1,25 @@
+<!--pages/myinformation/myinformation.wxml-->
+<view class='item' bindtap="bindViewTap2">
+  <view class="title">真实姓名 </view>
+  <view >
+    <input style="padding-top:30rpx;padding-left:30rpx"auto-focus placeholder="赵健"></input>
+  </view>
+</view>
+<view class="line"></view>
+
+<view class='item' bindtap="bindViewTap3">
+  <view class="title">常用qq</view>
+  <view >
+    <input style="padding-top:30rpx;padding-left:30rpx"auto-focus placeholder="296472503"></input>
+  </view>
+</view>
+<view class="line"></view>
+
+<view class='item'>
+  <view class="title">常用邮箱</view>
+  <view >
+    <input style="padding-top:30rpx;padding-left:30rpx"auto-focus placeholder="296472503@qq.com"></input>
+  </view>
+</view>
+<view class="line"></view>
+<button style="color:#DC143C;backgroud-color:#000000">修改用户信息</button>

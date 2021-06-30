@@ -1,0 +1,29 @@
+/* pages/first/first.wxss */
+.scroll_box{
+  height: 100%;
+    width: auto;
+  overflow: hidden;
+  padding: 20rpx;
+  background: #fff;
+  white-space: nowrap;
+  }
+  .item_list{
+  width: 200rpx;
+  height: 100%;
+  margin-right: 23rpx;
+  display: inline-block;
+  margin-left: 10px;
+  
+   
+  }
+  .line {
+    border: 1px solid rgb(94, 93, 93);
+    opacity: 0.2;
+  }
+  .image1{
+    width: 150rpx;
+    height: 50rpx;
+    border-radius: 10rpx;
+  }
+
+  

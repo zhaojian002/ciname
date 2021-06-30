@@ -1,0 +1,14 @@
+<!--pages/mycollection/mycollection.wxml-->
+<view style="display:flex;background-color:#E8E7E9">
+  <image src='../../icon/video_img1.png' style='width: 30rpx; height: 60rpx; border-radius: 10rpx;'></image>
+  <text>我的收藏</text>
+  
+</view>
+<block wx:for='{{mylist}}'>
+  
+    <view bindtap="bindVideotap">
+      <image src="{{item.img}}"></image>
+    {{item.name}}
+    </view>
+  
+</block>

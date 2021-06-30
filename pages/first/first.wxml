@@ -1,0 +1,28 @@
+<!--pages/first/first.wxml-->
+<view class="scroll_box"> 
+    <scroll-view scroll-x>
+      <block  wx:for='{{mylist}}' >
+        <view class="item_list" bindtap="bind_first_data" style="color:{{item.color}}" data-value="{{item.id}}">{{item.data}}</view>
+      </block>
+    </scroll-view>
+</view>
+<view class="line" style='padding-left:50rpx'></view>
+<block  wx:for='{{mylist_detailed}}' >
+  <view style="display:flex">
+    <view>
+      <view style="font-size:50rpx">{{item.start}}</view>
+      <view style="font-size:30rpx;color:#ccc">{{item.end}}散场</view>
+    </view>
+    <view style='padding-left:80rpx'>
+      <view style='padding-top:10rpx;font-size:40rpx'>{{item.name}}</view>
+      <view style='font-size:30rpx;color:#ccc'>{{item.cinema}}</view>
+    </view>
+    <view style='padding-left:150rpx;padding-top:20rpx;color:#DC143C'>{{item.price}}</view>
+    <view>
+      <image bindtap="bind_first_buy" style='padding-left:20rpx;padding-top:20rpx' class="image1" src='../../icon/but_buy.png'></image>
+    </view>
+
+
+  </view>
+  <view class="line"></view>
+</block>

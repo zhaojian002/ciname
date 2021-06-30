@@ -1,0 +1,30 @@
+<!--pages/myvideo/myvideo.wxml-->
+<block  wx:for='{{mylist}}' >
+  <view style="padding-top:10rpx;padding-left:10rpx;padding-right:10rpx">
+    <view style="background-color:#cccccc">预约电影：{{item.name}}</view>
+  </view>
+  <view style="color:#cccccc">预约时间：{{item.date}}</view>
+  <view style="color:#cccccc">预约场次：{{item.hour}}</view>
+  <view style="color:#cccccc">费用信息：{{item.price}}</view>
+  <view style="color:#cccccc">座位信息：{{item.seatx}}排{{item.seaty}}座</view>
+  <view wx:if="{{item.isbuy==false}}">
+    <view style="display:flex">
+      <text style="color:#DC143C">状态信息：待付款</text>
+      <button size='mini' style="background-color:#FFFFFF;color:#DC143C;width:60px;height:80rpx;font-size: 32rpx">去付款</button>
+      <button size='mini'  style="background-color:#FFFFFF;color:#DC143C;width:80px;height:80rpx;font-size: 32rpx">取消付款</button>
+    </view>
+  </view>
+  <view wx:elif="{{item.isbuy==true&&item.isend==false}}">
+    <view>
+      <text style="color:#DC143C">状态信息：未完结</text>
+      <text style="color:#DC143C;padding-left:260rpx">已付款</text>
+    </view>
+  </view>
+  <view wx:else>
+    <view>
+      <text style="color:#DC143C">状态信息：完结</text>
+      <text style="color:#DC143C;padding-left:300rpx">已付款</text>
+    </view>
+  </view>
+  <view class="line"></view>
+</block>

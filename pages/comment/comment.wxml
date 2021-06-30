@@ -1,0 +1,46 @@
+<!--pages/comment/comment.wxml-->
+<view style="display:flex">
+  <image style='padding-left:80rpx;width: 150rpx; height: 200rpx; border-radius: 10rpx;' src="../../icon/test1.png"></image>
+  <view style='padding-left:80rpx'>
+    <view>蜘蛛侠</view>
+    <view>价格：￥60元</view>
+    <view>上映：2020-07-14</view>
+    <view>时长：90分钟</view>
+  </view>
+</view>
+<view style="display:flex">
+  <button style="color:{{color_1}}" bindtap="bindComtap_introduce">剧情简介</button>
+  <button style="color:{{color_2}}" bindtap="bindComtap_comment">电影影评</button>
+</view>
+<view wx:if="{{sel_id==1}}">
+  <view style="display:flex;background-color:#E8E7E9">
+    <image src='../../icon/video_img1.png' style='width: 30rpx; height: 60rpx; border-radius: 10rpx;'></image>
+    <text>电影介绍</text> 
+  </view>
+  <view>
+    <view>导演：张三</view>
+    <view>演员：李四，王五</view>
+    <view>类型：动作，冒险</view>
+    <view>彼得·帕克（Peter Parker）即蜘蛛侠（Spider-Man），是美国漫威漫画旗下超级英雄，由编剧斯坦·李和画家史蒂夫·迪特科联合创造，初次登场于《惊奇幻想》（Amazing Fantasy）第15期（1962年8月），因为广受欢迎，几个月后，便开始拥有以自己为主角的单行本漫画。
+    蜘蛛侠全名彼得·本杰明·帕克（Peter Benjamin Parker），是美国的一名普通学生，毕业后成为《号角日报》的记者。由于意外被一只受过放射性感染的蜘蛛咬到，因此获得了和蜘蛛一样的超能力、超人般的耐力、反应、敏捷和速度。并发明了蛛网发射器，从此化身蜘蛛侠（Spider-Man）守卫纽约。</view>
+  </view>
+</view>
+<view wx:if="{{sel_id==2}}">
+  <block  wx:for='{{mylist}}' >
+    <view style="display:flex">
+      <view>{{item.name}}</view>
+      <view style='position: fixed;right:10rpx'>{{item.data}}</view>
+    </view>
+    <view>
+      <view>{{item.value}}星</view>
+      <view>{{item.com}}</view>
+    </view>
+  </block>
+</view>
+<view style="display:flex;position: fixed;bottom:2rpx">
+  <button bindtap="bind_return_first" style="width:200rpx">首页</button>
+  <button bindtap="bind_return_coll" style="width:200rpx">收藏</button>
+  <button bindtap="bind_return_buy" style="width:350rpx">选座购买</button>
+</view>
+
+
